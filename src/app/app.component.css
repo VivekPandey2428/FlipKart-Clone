@@ -11,6 +11,7 @@
     position: fixed;
     background:#2874f0;
     display: flex;
+    z-index: 100;
 }
 .heading{
     margin-left:15%;
@@ -50,15 +51,19 @@
 }
 .image-section{
     display: flex;
-    max-width: 100%;
+    width: 100%;
     height:auto;
     background:#fff;
-    justify-content: space-between;
-    padding-top:100px;
+    justify-content: space-around;
+    padding-top:70px;
+}
+.image-section img{
+    height:60px;
+    width:60px;
 }
 .image-section p{
-    margin-left:20px;
-    margin-top:-10px;
+    font-size:14px;
+    font-weight: 500;
 }
 .image-slider{
     margin-top:10px;
@@ -67,3 +72,53 @@
     width: 100%;  
     margin: auto;  
   } 
+
+.image-slider2{
+    width: 98%;
+    margin-top:10px;
+    margin-left:15px;
+    background:#fff;
+    margin-bottom:20px;
+}
+.upperdesc{
+    display: flex;
+    justify-content: space-between;
+}
+.upperdesc h3{
+    padding-top:10px;
+    padding-left:10px;
+}
+.upperdesc button{
+    margin-right:100px;
+    margin-top:10px;
+    padding:10px;
+    font-size:14px;
+    border:none;
+    color:white;
+    background:#2874f0;
+}
+.images33{
+    width: 100%;
+    height:auto;
+    display: flex;
+}
+.blockimg{
+    margin-left:15px;
+    padding-left:35px;
+}
+.blockimg img{
+    margin-top:10px;
+    height:150px;
+    width:150px;
+}
+.image-slider3{
+    width: 98%;
+    margin-top:10px;
+    margin-left:15px;
+    background:#fff;
+    margin-bottom:20px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: column;
+}

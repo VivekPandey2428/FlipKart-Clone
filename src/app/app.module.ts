@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SlideshowModule } from 'ng-simple-slideshow';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { LightboxModule } from 'ngx-lightbox';
+import { SliderModule } from 'angular-image-slider';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+
 
 @NgModule({
   declarations: [
@@ -15,6 +20,8 @@ import { SlideshowModule } from 'ng-simple-slideshow';
     NgbModule,
     SlickCarouselModule,
     SlideshowModule,
+    SliderModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
