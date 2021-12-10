@@ -7,11 +7,12 @@
     </div>
     <div class="searchbox">
       <input type="text" placeholder="Search for products, brands and more">
+      <img class="search-icon" [src]=icons.search alt="">
     </div>
     </div>
     <div class="navelem">
       <ul class="list-group">
-        <li class="list-group-item">Vivek</li>
+        <li class="list-group-item" (click)="dropdown()" style="display: flex;"><p>Vivek</p><img class="down-arrow" [src]=icons.downarrow alt=""></li>
         <li class="list-group-item">More</li>
         <li class="list-group-item">Cart</li>
       </ul>
