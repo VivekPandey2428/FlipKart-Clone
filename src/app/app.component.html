@@ -10,36 +10,93 @@
       <img class="search-icon" [src]=icons.search alt="">
     </div>
     </div>
-    <div class="navelem">
+
+    <div class="navelem" ngbDropdown>
       <ul class="list-group">
-        <li class="list-group-item" (click)="dropdown()" style="display: flex;"><p>Vivek</p><img class="down-arrow" [src]=icons.downarrow alt=""></li>
+        <li class="list-group-item" ngbDropdownToggle style="padding: 10px;">
+          <p class="alignp">Vivek⮟</p>
+          <div ngbDropdownMenu>
+            <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
+          </div>
+        </li>
         <li class="list-group-item">More</li>
         <li class="list-group-item">Cart</li>
       </ul>
     </div>
   </div>
   <div class="image-section">
-    <div class="align-image" *ngFor="let img of image">
-      <img [src]=img.url alt="" >
-      <p>{{img.desc}}</p>
+    <div class="align-image"  style="margin-left: 150px;">
+      <img [src]=image[0].url  alt="" >
+      <p>{{image[0].desc}}</p>
+    </div>
+    <div class="align-image">
+      <img [src]=image[1].url alt="" >
+      <p>{{image[1].desc}}</p>
+    </div>
+    <div class="align-image"> 
+      <img [src]=image[2].url alt="" >
+      <p>{{image[2].desc}}</p>
+      </div>
+    <div class="align-image" ngbDropdown>
+      <div class="dropdown1" ngbDropdownToggle>
+      <img [src]=image[3].url alt="" >
+      <p style="padding-top:2px;">{{image[3].desc}}</p>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem class="editdropdown" *ngFor="let data of Fashion">{{data.category}}</button>
+      </div>
+    </div>
+    </div>
+    <div class="align-image" ngbDropdown>
+      <div class="dropdown1" ngbDropdownToggle>
+      <img [src]=image[4].url alt="" >
+      <p style="padding-top:2px;">{{image[4].desc}}</p>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem class="editdropdown" *ngFor="let data of Electronics">{{data.category}}</button>
+      </div>
+    </div>
+    </div>
+    <div class="align-image" ngbDropdown>
+      <div class="dropdown1" ngbDropdownToggle>
+      <img [src]=image[5].url alt="" >
+      <p style="padding-top:2px;">{{image[5].desc}}</p>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
+      </div>
+    </div>
+    </div><div class="align-image" ngbDropdown>
+      <div class="dropdown1" ngbDropdownToggle>
+      <img [src]=image[6].url alt="" >
+      <p style="padding-top:2px;">{{image[6].desc}}</p>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
+      </div>
+    </div>
+    </div>
+      <div class="align-image">
+      <img [src]=image[7].url alt="" >
+      <p>{{image[7].desc}}</p>
+    </div>
+      <div class="align-image">
+      <img [src]=image[8].url alt="" >
+      <p>{{image[8].desc}}</p>
     </div>
   </div>
   <div class="image-slider">
     <ngb-carousel *ngIf="imageSlider">
       <ng-template ngbSlide *ngFor="let image of imageSlider">
         <div class="picsum-img-wrapper imgs2">
-          <img [src]=image.img alt="Random first slide" height="300px;" width="100%">
+          <img [src]=image.img alt="Random first slide" height="300px;" width="100%" style="background-size: cover;">
         </div>
       </ng-template>
     </ngb-carousel>
   <div>  
-    <div class="image-slider2">
+    <div class="image-slider2" style="margin-top: 10px;">
       <div class="upperdesc">
       <h3>Deals of the Day</h3>
       <button>VIEW ALL</button>
     </div>
     <hr style="color: black; margin-top:10px" height="30px">
-    <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200" [objectFit]="'cover'" [lightDOM]="true" class="carousel--slider-alignment" style="height:300px">
+    <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200"  [lightDOM]="true" class="carousel--slider-alignment" style="height:300px; z-index:1;">
         
       <div class="carousel-cell"*ngFor="let img of DealsOfTheDay" style="margin: 10px;">
         <div class="card card-border-none" style="border: none;">
@@ -60,7 +117,7 @@
         <button>VIEW ALL</button>
       </div>
       <hr style="color: black; margin-top:10px" height="30px">
-      <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200" [objectFit]="'cover'" [lightDOM]="true" class="carousel--slider-alignment" style="height:250px">
+      <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200" [objectFit]="'cover'" [lightDOM]="true" class="carousel--slider-alignment" style="height:250px;z-index: 1;">
         
         <div class="carousel-cell"*ngFor="let img of SuggestedForYou" style="margin:10px;">
           <div class="card card-border-none" style="border:none">

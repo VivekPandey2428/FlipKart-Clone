@@ -13,7 +13,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

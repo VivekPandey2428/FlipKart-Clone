@@ -8,6 +8,7 @@ import { Images } from './images';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  clicked:boolean=false;
   image:Images[]=[
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",desc:"Top Offers"},
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",desc:"Grocery"},
@@ -20,10 +21,10 @@ export class AppComponent {
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100",desc:"Beauty,Toys and More ⮟"},
   ];
   imageSlider=[
-    {img:"https://m.media-amazon.com/images/I/51PmJtQaLZL._SX3000_.jpg"},
-    {img:"https://m.media-amazon.com/images/I/616VZnvmhPL._SX3000_.jpg"},
-    {img:"https://m.media-amazon.com/images/I/51PmJtQaLZL._SX3000_.jpg"},
-    {img:"https://m.media-amazon.com/images/I/61S7tScATML._SX3000_.jpg"},
+    {img:"https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/1500x300_with-out-Bank.jpg"},
+    {img:"https://images-na.ssl-images-amazon.com/images/G/31/img19/Luggage/Nov/Mega-travel-store/MTS-1242x450._CB445574023_.jpg"},
+    {img:"https://images-eu.ssl-images-amazon.com/images/G/31/img21/Grocery/BevFest/Dec21/Store-Banner-PC-1500X300-REVISED-X1.jpg"},
+    {img:"https://m.media-amazon.com/images/S/aplus-media-library-service-media/ba5d873c-81c7-4432-88ca-47b2ec7e56e7.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"},
   ]
   DealsOfTheDay=[
     {image:"https://rukminim1.flixcart.com/image/150/150/k0r15e80/shoe/w/c/c/dtaw19fw-011-8-ducati-navy-original-imafkh3hcvadpjg8.jpeg?q=70",brand:"Fcuk, Ducati..",offer:"50-80+Extra 5% off",Category:"Footwear BestSeller"},
@@ -56,10 +57,55 @@ export class AppComponent {
     {image:"https://rukminim1.flixcart.com/image/312/312/k55n0y80/tablet/y/j/t/lenovo-za4y0079in-original-imafnwhkqztduncc.jpeg?q=70",brand:"Lenovo Tab M10 (HD) 2 GB RAM 32 GB ROM 10.1 inch with Wi-Fi+4G Tablet",offer:"6%off-₹10,999",Category:"Footwear BestSeller"},
     {image:"https://rukminim1.flixcart.com/image/312/312/k0flmkw0/tablet/h/h/6/lenovo-za490027in-original-imafk8kjxpats2wh.jpeg?q=70",brand:"Lenovo M10 FHD REL 3 GB RAM 32 GB ROM 10.04 inch with Wi-Fi Only Tablet",offer:"6%off-₹10,999",Category:"Footwear BestSeller"},
   ] 
+
+  Fashion=[
+    {category:"Men's Top Wear"},
+    {category:"Men's Bottom Wear"},
+    {category:"Women's Ethnic"},
+    {category:"Women's Western"},
+    {category:"Men Footwear"},
+    {category:"Women Footwear"},
+    {category:"Watches and accessories"},
+    {category:"Bags, Suitcases and Luggage"},
+    {category:"Kids"},
+    {category:"Essential"},
+    {category:"Winter"}
+  ]
+  Electronics=[
+    {category:"Audio"},
+    {category:"Electronic GST Store"},
+    {category:"Cameras and Accessories"},
+    {category:"Computer Peripherals"},
+    {category:"Gaming"},
+    {category:"Health and Personal Care"},
+    {category:"Laptop Accessories"},
+    {category:"Laptop and Desktops"},
+    {category:"Mobile Accessories"},
+    {category:"Powerbank"},
+    {category:"Smart Wearables"}
+  ]
   constructor(){
   }
   dropdown(){
     console.log("helo");
+  }
+  dropdownContent=[
+    {content:"My Profile"},
+    {content:"SuperCoin Zone"},
+    {content:"Flipkart Plus Zone"},
+    {content:"Orders"},
+    {content:"Wishlist"},
+    {content:"My Chats"},
+    {content:"Coupons"},
+    {content:"Gift Cards"},
+    {content:"Notifications"},
+    {content:"Logout"}
+  ]
+  isitClicked(){
+    this.clicked=true;
+  }
+  negate(){
+    this.clicked=false;
   }
  
   
