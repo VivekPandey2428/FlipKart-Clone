@@ -90,6 +90,7 @@ export class AppComponent {
     console.log("helo");
   }
   dropdownContent=[
+    {content:"Vivek"},
     {content:"My Profile"},
     {content:"SuperCoin Zone"},
     {content:"Flipkart Plus Zone"},

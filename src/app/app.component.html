@@ -11,14 +11,16 @@
     </div>
     </div>
 
-    <div class="navelem" ngbDropdown>
-      <ul class="list-group">
-        <li class="list-group-item" ngbDropdownToggle style="padding: 10px;">
-          <p class="alignp">Vivek⮟</p>
-          <div ngbDropdownMenu>
-            <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
-          </div>
-        </li>
+    <div class="navelem">
+         <div class="dropdown"(click)="negate()" (mouseenter)="isitClicked()">
+           <button class="dropbtn">
+             Vivek⮟
+           </button>
+           <div class="dropdown-content" *ngFor="let data of dropdownContent">
+             <a *ngIf="clicked">{{data.content}}</a>
+           </div>
+         </div>
+        <ul class="list-group">
         <li class="list-group-item">More</li>
         <li class="list-group-item">Cart</li>
       </ul>

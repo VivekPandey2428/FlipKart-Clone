@@ -59,6 +59,7 @@
 }
 .navelem{
     margin-left:16%;
+    display: flex;
 }
 .list-group{
     display: flex;
@@ -166,9 +167,28 @@
 .dropdown-toggle::after {
     display: none;
 }
-.editdropdown{
-    padding:12px;
+.navelem select option{
+    gap:20px;
 }
-.editdropdown:hover{
-    color:#2874f0;
-}
+.dropbtn {
+    background-color: #2874f0;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+ .dropdown-content{
+     height:auto;
+     width:auto;
+     background:#fff;
+  }
+.dropdown-content a {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;color:#2874f0}
+  
+  .dropdown:hover .dropbtn {background-color: #2874f0;}
