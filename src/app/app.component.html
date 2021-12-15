@@ -12,15 +12,19 @@
     </div>
 
     <div class="navelem">
-         <div class="dropdown"(click)="negate()" (mouseenter)="isitClicked()">
+      <ul class="list-group">
+        <li class="list-group-item">
+         <div class="dropdown" (mouseenter)="isitClicked()">
            <button class="dropbtn">
              Vivek⮟
            </button>
+           <div *ngIf="clicked" (click)="negate()" (mouseleave)="isitClicked()" class="pfix">
            <div class="dropdown-content" *ngFor="let data of dropdownContent">
-             <a *ngIf="clicked">{{data.content}}</a>
+             <a>{{data.content}}</a>
            </div>
+          </div>
          </div>
-        <ul class="list-group">
+        </li>
         <li class="list-group-item">More</li>
         <li class="list-group-item">Cart</li>
       </ul>
@@ -39,23 +43,27 @@
       <img [src]=image[2].url alt="" >
       <p>{{image[2].desc}}</p>
       </div>
-    <div class="align-image" ngbDropdown>
-      <div class="dropdown1" ngbDropdownToggle>
+    <div class="align-image">
+      <div class="dropdown" (mouseleave)="toggle()" (mouseenter)="toggle()">
       <img [src]=image[3].url alt="" >
       <p style="padding-top:2px;">{{image[3].desc}}</p>
-      <div ngbDropdownMenu>
-        <button ngbDropdownItem class="editdropdown" *ngFor="let data of Fashion">{{data.category}}</button>
+        <div *ngIf="active" (click)="unactive()" class="pfix">
+        <div class="dropdown-content2" *ngFor="let data of Fashion">
+          <a>{{data.category}}</a>
+        </div>
+       </div>
       </div>
     </div>
-    </div>
-    <div class="align-image" ngbDropdown>
-      <div class="dropdown1" ngbDropdownToggle>
+    <div class="align-image">
+      <div class="dropdown" (mouseleave)="toggle2()" (mouseenter)="toggle2()">
       <img [src]=image[4].url alt="" >
       <p style="padding-top:2px;">{{image[4].desc}}</p>
-      <div ngbDropdownMenu>
-        <button ngbDropdownItem class="editdropdown" *ngFor="let data of Electronics">{{data.category}}</button>
+        <div *ngIf="active2" (click)="unactive2()" class="pfix">
+        <div class="dropdown-content2" *ngFor="let data of Electronics">
+          <a>{{data.category}}</a>
+        </div>
+       </div>
       </div>
-    </div>
     </div>
     <div class="align-image" ngbDropdown>
       <div class="dropdown1" ngbDropdownToggle>

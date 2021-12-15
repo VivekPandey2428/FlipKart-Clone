@@ -9,6 +9,8 @@ import { Images } from './images';
 })
 export class AppComponent {
   clicked:boolean=false;
+  active:boolean=false;
+  active2:boolean=false;
   image:Images[]=[
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",desc:"Top Offers"},
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",desc:"Grocery"},
@@ -40,7 +42,7 @@ export class AppComponent {
   icons={
     leftarrow:"https://cdn-icons.flaticon.com/png/512/2985/premium/2985161.png?token=exp=1638970308~hmac=1563ba42b488dbc2c6f28ffd9bc46d87",
     rightarrow:"https://cdn-icons-png.flaticon.com/512/271/271228.png",
-    search:"https://cdn-user-icons.flaticon.com/48079/48079557/1639139573490.svg?token=exp=1639140474~hmac=6ab209c34f5d592244f2f3601136f39c",
+    search:"https://cdn-user-icons.flaticon.com/48079/48079557/1639139573490.svg?token=exp=1639525912~hmac=94224c440b9789a2ac8322026084876a",
     downarrow:"https://cdn-user-icons.flaticon.com/48079/48079557/1639140583226.svg?token=exp=1639141489~hmac=54338eae049410f167d9a8f64ee9539f",
   }
   SuggestedForYou=[
@@ -90,7 +92,6 @@ export class AppComponent {
     console.log("helo");
   }
   dropdownContent=[
-    {content:"Vivek"},
     {content:"My Profile"},
     {content:"SuperCoin Zone"},
     {content:"Flipkart Plus Zone"},
@@ -103,10 +104,22 @@ export class AppComponent {
     {content:"Logout"}
   ]
   isitClicked(){
-    this.clicked=true;
+    this.clicked=!this.clicked;
   }
   negate(){
     this.clicked=false;
+  }
+  toggle(){
+    this.active=!this.active;
+  }
+  unactive(){
+    this.active=false;
+  }
+  toggle2(){
+    this.active2=!this.active2;
+  }
+  unactive2(){
+    this.active2=false;
   }
  
   
