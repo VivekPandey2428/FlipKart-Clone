@@ -65,22 +65,27 @@
        </div>
       </div>
     </div>
-    <div class="align-image" ngbDropdown>
-      <div class="dropdown1" ngbDropdownToggle>
+    <div class="align-image">
+      <div class="dropdown" (mouseleave)="toggle3()" (mouseenter)="toggle3()">
       <img [src]=image[5].url alt="" >
       <p style="padding-top:2px;">{{image[5].desc}}</p>
-      <div ngbDropdownMenu>
-        <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
+        <div *ngIf="active3" (click)="unactive3()" class="pfix">
+        <div class="dropdown-content2" *ngFor="let data of Electronics">
+          <a>{{data.category}}</a>
+        </div>
+       </div>
       </div>
     </div>
-    </div><div class="align-image" ngbDropdown>
-      <div class="dropdown1" ngbDropdownToggle>
+    <div class="align-image">
+      <div class="dropdown" (mouseleave)="toggle4()" (mouseenter)="toggle4()">
       <img [src]=image[6].url alt="" >
       <p style="padding-top:2px;">{{image[6].desc}}</p>
-      <div ngbDropdownMenu>
-        <button ngbDropdownItem class="editdropdown" *ngFor="let data of dropdownContent">{{data.content}}</button>
+        <div *ngIf="active4" (click)="unactive4()" class="pfix">
+        <div class="dropdown-content2" *ngFor="let data of Electronics">
+          <a>{{data.category}}</a>
+        </div>
+       </div>
       </div>
-    </div>
     </div>
       <div class="align-image">
       <img [src]=image[7].url alt="" >

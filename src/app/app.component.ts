@@ -11,6 +11,8 @@ export class AppComponent {
   clicked:boolean=false;
   active:boolean=false;
   active2:boolean=false;
+  active3:boolean=false;
+  active4:boolean=false;
   image:Images[]=[
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",desc:"Top Offers"},
     {url:"https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",desc:"Grocery"},
@@ -121,6 +123,17 @@ export class AppComponent {
   unactive2(){
     this.active2=false;
   }
- 
+  toggle3(){
+    this.active3=!this.active3;
+  }
+  toggle4(){
+    this.active4=!this.active4;
+  }
+  unactive3(){
+    this.active3=false;
+  }
+  unactive4(){
+    this.active4=false;
+  }
   
 }
