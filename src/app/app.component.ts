@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Caption } from './caption';
 import { Images } from './images';
+import { HostListener } from '@angular/core';
+import { ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -87,8 +89,50 @@ export class AppComponent {
     {category:"Mobile Accessories"},
     {category:"Powerbank"},
     {category:"Smart Wearables"}
+    
   ]
-  constructor(){
+  ngAfterViewInit() {
+    let slider=document.querySelectorAll<HTMLImageElement>(".slide");
+    const arrowLeft=<HTMLElement>document.querySelector("#arrow-left");
+    const arrowRight=<HTMLElement>document.querySelector("#arrow-right");
+    let current=0;
+    function reset(){
+    for(let i=0;i<slider.length;i++){
+      slider[i].style.display="none";
+    }
+}
+function startslide(){
+  reset();
+  slider[0].style.display="block";
+}
+function slideLeft(){
+  reset();
+  slider[current-1].style.display="block";
+  current--;
+}
+function slideRight(){
+  reset();
+  slider[current+1].style.display="block";
+  current++;
+}
+  arrowLeft.addEventListener("click",function(){
+   if(current===0){
+     current=slider.length;
+   }
+   slideLeft();
+ });
+  arrowRight.addEventListener("click",function(){
+    if(current===slider.length-1){
+    current=-1;
+   }
+  slideRight();
+});
+
+startslide(); 
+}
+  constructor(private el:ElementRef){
+  }
+  ngOnInit(){
   }
   dropdown(){
     console.log("helo");
