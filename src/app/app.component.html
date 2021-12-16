@@ -107,46 +107,44 @@
   </div>
   <div id="arrow-right" class="arrow"></div>
   </div>
-    <div class="image-slider2" style="margin-top: 10px;">
-      <div class="upperdesc">
-      <h3>Deals of the Day</h3>
-      <button>VIEW ALL</button>
-    </div>
-    <hr style="color: black; margin-top:10px" height="30px">
-    <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200"  [lightDOM]="true" class="carousel--slider-alignment" style="height:300px; z-index:1;">
-        
-      <div class="carousel-cell"*ngFor="let img of DealsOfTheDay" style="margin: 10px;">
-        <div class="card card-border-none" style="border: none;">
-          <img class="card-img-top" [src]=img.image alt="">
-          <div class="card-body">
-            <h6 class="card-title">{{img.brand}}</h6>
-            <p class="card-text" style="color: yellowgreen;">{{img.offer}}</p>
-            <p class="card-text">{{img.Category}}</p>
-          </div>
-        </div>
-      </div>
-      
-    </carousel>
-    </div>
     <div class="image-slider3">
       <div class="upperdesc">
         <h3>Suggested For You</h3>
         <button>VIEW ALL</button>
       </div>
       <hr style="color: black; margin-top:10px" height="30px">
-      <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200" [objectFit]="'cover'" [lightDOM]="true" class="carousel--slider-alignment" style="height:250px;z-index: 1;">
-        
-        <div class="carousel-cell"*ngFor="let img of SuggestedForYou" style="margin:10px;">
-          <div class="card card-border-none" style="border:none">
-            <img class="card-img-top" [src]=img.image alt="">
-            <div class="card-body">
-              <h6 class="card-title">{{img.brand}}</h6>
-              <p class="card-text" >{{img.offer}}</p>
-            </div>
-          </div>
-        </div>
-        
-      </carousel>
+      <div class="containimgs">
+        <div id="left-arrow2" class="arrow2"></div>
+        <div id="right-arrow2" class="arrow2"></div>
+       <section class="wrapimgs">
+         <div class="z" *ngFor="let img of DealsOfTheDay">
+           <img [src]=img.image alt="">
+           <p style="font-weight: bold; font-size:16px;">{{img.brand}}</p>
+           <p>{{img.Category}}</p>
+           <p style="color: yellowgreen;">{{img.offer}}</p>
+         </div>
+       </section>
+        </div>      
+    </div>
+  <div class="image-slider2" style="margin-top: 10px;">
+    <div class="upperdesc">
+    <h3>Deals of the Day</h3>
+    <button>VIEW ALL</button>
+  </div>
+  <hr style="color: black; margin-top:10px" height="30px">
+  <carousel [loop]="true" [cellsToScroll]="1" [margin]="30" [cellWidth]="200"  [lightDOM]="true" class="carousel--slider-alignment" style="height:300px; z-index:1;">
       
+    <div class="carousel-cell"*ngFor="let img of DealsOfTheDay" style="margin: 10px;">
+      <div class="card card-border-none" style="border: none;">
+        <img class="card-img-top" [src]=img.image alt="">
+        <div class="card-body">
+          <h6 class="card-title">{{img.brand}}</h6>
+          <p class="card-text" style="color: yellowgreen;">{{img.offer}}</p>
+          <p class="card-text">{{img.Category}}</p>
+        </div>
+      </div>
+    </div>
+    
+  </carousel>
   </div>
   </div>

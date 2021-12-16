@@ -96,6 +96,9 @@ export class AppComponent {
     const arrowLeft=<HTMLElement>document.querySelector("#arrow-left");
     const arrowRight=<HTMLElement>document.querySelector("#arrow-right");
     let current=0;
+    /*<----------------------------------Image Slider------------------------------------->
+    <<<------------------Starts From here-------------->>>
+    */
     function reset(){
     for(let i=0;i<slider.length;i++){
       slider[i].style.display="none";
@@ -126,9 +129,46 @@ function slideRight(){
     current=-1;
    }
   slideRight();
+
 });
 
 startslide(); 
+ /*<<<---------------------------------------End of Image Slider------------------------------------>>>*/
+/*<<<----------------------------------Carousel Begins--------------------------->>>*/
+    let carousel=document.querySelectorAll<HTMLElement>(".z");
+    const arrowLeft2=<HTMLElement>document.getElementById("left-arrow2");
+    const arrowRight2=<HTMLElement>document.getElementById("right-arrow2");
+    var cnt=0;
+    var to_slide=0;
+    arrowLeft2.onclick = () =>{
+      cnt--;
+      var n=Math.floor(carousel.length/2);
+      for(let i=0;i<carousel.length;i++){
+        if(cnt<0){
+          cnt=0;
+        }
+        else{
+          to_slide=220*cnt;
+          console.log(to_slide);
+          carousel[i].style.left=`-${to_slide}px`;
+        }
+      }
+    }
+    arrowRight2.onclick = () =>{
+      cnt++;
+      var n=Math.floor(carousel.length/2);
+      for(let i=0;i<carousel.length;i++){
+        if(cnt>n-1){
+          cnt=n-1;
+        }
+        else{
+          to_slide=cnt*220;
+          console.log(to_slide);
+          carousel[i].style.left=`-${to_slide}px`;
+        }
+      }
+    }
+ 
 }
   constructor(private el:ElementRef){
   }
