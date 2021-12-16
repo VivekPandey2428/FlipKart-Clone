@@ -105,8 +105,10 @@
   } 
 
 .image-slider2{
-    width: 100%;
+    overflow-x: hidden;
+    width: 98%;
     margin-top:10px;
+    margin-left:15px;
     background:#fff;
     margin-bottom:20px;
 }
@@ -142,8 +144,10 @@
     width:150px;
 }
 .image-slider3{
-    width: 100%;
+    overflow-x: hidden;
+    width: 98%;
     margin-top:10px;
+    margin-left:15px;
     background:#fff;
 }
 .flex-row{
@@ -219,10 +223,15 @@
  }
  .wrap{
      position: relative;
+     margin-top:10px;
+     margin-left:15px;
+     overflow-x: hidden;
+     
  }
  .slide{
      background-size: cover;
      background-repeat: no-repeat;
+     width:98%;
  }
  .arrow {
     cursor: pointer;
