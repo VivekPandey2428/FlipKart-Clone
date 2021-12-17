@@ -99,7 +99,7 @@
   <div class="wrap">
     <button id="arrow-left" class="arrow" (click)="onPrevious()"[disabled]="this.counter===0" >&#x2190;
     </button>
-    <div id="slider"[@animationImageSlider]="counter">
+    <div id="slider"[@animImageSlider]="counter">
       <div class="slide" *ngFor="let image of imageSlider; let i=index">
         <div class="slide-content" *ngIf="i===counter">
           <img [src]=image.img alt="Random first slide" height="100%" width="100%" style="background-size: cover;">

@@ -9,7 +9,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { LightboxModule } from 'ngx-lightbox';
 import { SliderModule } from 'angular-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     SlickCarouselModule,
     SlideshowModule,
     SliderModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

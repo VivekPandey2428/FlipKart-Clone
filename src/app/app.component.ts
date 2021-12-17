@@ -7,10 +7,10 @@ import { trigger, transition, query, style, animate, group } from '@angular/anim
 const left = [
   query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
   group([
-    query(':enter', [style({ transform: 'translateX(-200px)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+    query(':enter', [style({ transform: 'translateX(-200px)' }), animate('.0s ease-out', style({ transform: 'translateX(0%)' }))], {
       optional: true,
     }),
-    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(200px)' }))], {
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.0s ease-out', style({ transform: 'translateX(200px)' }))], {
       optional: true,
     }),
   ]),
@@ -19,10 +19,10 @@ const left = [
 const right = [
   query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
   group([
-    query(':enter', [style({ transform: 'translateX(200px)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+    query(':enter', [style({ transform: 'translateX(200px)' }), animate('.0s ease-out', style({ transform: 'translateX(0%)' }))], {
       optional: true,
     }),
-    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(-200px)' }))], {
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.0s ease-out', style({ transform: 'translateX(-200px)' }))], {
       optional: true,
     }),
   ]),
