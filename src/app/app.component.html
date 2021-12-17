@@ -97,15 +97,16 @@
     </div>
   </div>
   <div class="wrap">
-    <div id="arrow-left" class="arrow" ></div>
-    <div id="slider">
-      <div class="slide" *ngFor="let image of imageSlider">
-        <div class="slide-content">
+    <button id="arrow-left" class="arrow" (click)="onPrevious()"[disabled]="this.counter===0" >&#x2190;
+    </button>
+    <div id="slider"[@animationImageSlider]="counter">
+      <div class="slide" *ngFor="let image of imageSlider; let i=index">
+        <div class="slide-content" *ngIf="i===counter">
           <img [src]=image.img alt="Random first slide" height="100%" width="100%" style="background-size: cover;">
         </div>
       </div>
   </div>
-  <div id="arrow-right" class="arrow"></div>
+  <button id="arrow-right" class="arrow"  (click)="onNext()"[disabled]="this.counter===this.imageSlider.length-1">&#x2192;</button>
   </div>
     <div class="image-slider3">
       <div class="upperdesc">

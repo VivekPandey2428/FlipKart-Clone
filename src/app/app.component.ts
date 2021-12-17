@@ -3,11 +3,39 @@ import { Caption } from './caption';
 import { Images } from './images';
 import { HostListener } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { trigger, transition, query, style, animate, group } from '@angular/animations';
+const left = [
+  query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(-200px)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(200px)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 
+const right = [
+  query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
+  group([
+    query(':enter', [style({ transform: 'translateX(200px)' }), animate('.3s ease-out', style({ transform: 'translateX(0%)' }))], {
+      optional: true,
+    }),
+    query(':leave', [style({ transform: 'translateX(0%)' }), animate('.3s ease-out', style({ transform: 'translateX(-200px)' }))], {
+      optional: true,
+    }),
+  ]),
+];
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('animImageSlider', [
+      transition(':increment', right),
+      transition(':decrement', left),
+    ])]
 })
 export class AppComponent {
   clicked:boolean=false;
@@ -92,47 +120,9 @@ export class AppComponent {
     
   ]
   ngAfterViewInit() {
-    let slider=document.querySelectorAll<HTMLImageElement>(".slide");
-    const arrowLeft=<HTMLElement>document.querySelector("#arrow-left");
-    const arrowRight=<HTMLElement>document.querySelector("#arrow-right");
-    let current=0;
     /*<----------------------------------Image Slider------------------------------------->
     <<<------------------Starts From here-------------->>>
     */
-    function reset(){
-    for(let i=0;i<slider.length;i++){
-      slider[i].style.display="none";
-    }
-}
-function startslide(){
-  reset();
-  slider[0].style.display="block";
-}
-function slideLeft(){
-  reset();
-  slider[current-1].style.display="block";
-  current--;
-}
-function slideRight(){
-  reset();
-  slider[current+1].style.display="block";
-  current++;
-}
-  arrowLeft.addEventListener("click",function(){
-   if(current===0){
-     current=slider.length;
-   }
-   slideLeft();
- });
-  arrowRight.addEventListener("click",function(){
-    if(current===slider.length-1){
-    current=-1;
-   }
-  slideRight();
-
-});
-
-startslide(); 
  /*<<<---------------------------------------End of Image Slider------------------------------------>>>*/
 /*<<<----------------------------------Carousel Begins--------------------------->>>*/
     let carousel=document.querySelectorAll<HTMLElement>(".z");
@@ -219,5 +209,15 @@ startslide();
   unactive4(){
     this.active4=false;
   }
-  
+  counter: number = 0;
+  onNext(){
+    if(this.counter!=this.imageSlider.length-1){
+      this.counter++;
+    }
+  }
+  onPrevious(){
+    if(this.counter>0){
+      this.counter--;
+    }
+  }
 }
