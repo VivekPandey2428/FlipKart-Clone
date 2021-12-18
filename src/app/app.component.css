@@ -310,3 +310,99 @@
       width:100%;
       height:40px;
   }
+  .login-button{
+    padding:5px;
+    margin-top:-5px;
+    color:#2874f0;
+    background:#fff;
+    border:none;
+  }
+  .login-modal{
+      position: absolute;
+      z-index:200;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px 500px rgb(0 0 0 / 0.2);
+  }
+  /*modal*/
+  .container2{
+    height:50px;
+    width:100%;
+    background:#2874f0;
+  }
+  .container{
+    width:700px;
+    height:500px;
+    background:#fff;
+    border-radius:5px;
+    box-shadow:0 0 10px 0 lightgrey;
+    display: flex;
+  }
+  .desc44{
+    width:40%;
+    height:100%;
+    background:#2874f0;
+  }
+  .desc44 h3{
+    font-size:28px;
+    padding-top:50px;
+    padding-left:40px;
+    color:#fff;
+  }
+  .desc44 p{
+    color:#dbdbdb;
+    line-height:150%;
+    font-size:18px;
+    padding-left:40px;
+    width:60%;
+    margin-top:20px;
+  }
+  .input-info{
+    width:60%;
+    height:100%;
+    background: #fff;
+  }
+  .input-info input {
+    padding: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 80%;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+  }
+  .agreement {
+    margin-left: 35px;
+    font-size: 12px;
+    width: 75%;
+    margin-top:20px;
+  }
+  .agreement a {
+    text-decoration: none;
+    color: #2874f0;
+  }
+  .input-info button {
+    padding: 10px;
+    width: 85%;
+    margin-left: 30px;
+    margin-top:20px;
+  }
+  .login-button2{
+    background:#fb641b;
+    border:none;
+    color:#fff;
+    font-weight:bold;
+    font-size:16px;
+  }
+  
+  .or{
+    margin-left:46%;
+    color:grey;
+    margin-top:10px;
+  }
+  .OTP{
+    border:none;
+    background:#fff;
+    color:#2874f0;
+    box-shadow:0px 0px 3px lightgrey;
+  }

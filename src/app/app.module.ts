@@ -10,6 +10,7 @@ import { LightboxModule } from 'ngx-lightbox';
 import { SliderModule } from 'angular-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SliderModule,
     IvyCarouselModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

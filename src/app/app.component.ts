@@ -3,6 +3,7 @@ import { Caption } from './caption';
 import { Images } from './images';
 import { HostListener } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { trigger, transition, query, style, animate, group } from '@angular/animations';
 const left = [
   query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
@@ -219,5 +220,17 @@ export class AppComponent {
     if(this.counter>0){
       this.counter--;
     }
+  }
+  /*------------------------------>Login Modal<---------------------------- */
+  clicked3:boolean=false;
+  onclick(){
+    this.clicked3=!this.clicked3;
+  }
+  email:any;
+  password:any;
+  profileForm = new FormGroup({
+  });
+  onSubmit(){
+    
   }
 }
