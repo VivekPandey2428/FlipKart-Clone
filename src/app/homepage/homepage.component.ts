@@ -233,7 +233,7 @@ export class HomepageComponent implements OnInit {
   profileForm = new FormGroup({
   });
   onSubmit(){
-    
+    this.clicked3=false;
   }
   mobileproducts(){
     this.route.navigate(['products']);
