@@ -1,0 +1,17 @@
+<p class="h1" style="text-align: center;"><a routerLink="/cart">Proceed to Checkout</a></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="align-col-products"*ngFor="let product of products">
+            <div class="img-40" >
+                <img class="adjust" [src]=product.Img alt="">
+            </div>
+            <div class="img-desc">
+                <p class="h1">{{product.Model}}</p>
+                <p class="h3">Buy Now</p>
+                <p class="h6">Limited Time deal offer</p>
+                <p class="h5">{{product.price}}</p>
+                <button class="btn btn-primary p-2" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+.align-col-products{
+    width:500px;
+    height:200px;
+    box-shadow: 0 0 10px lightgrey;
+    display: flex;
+}
+.img-40{
+    height:100%;
+    width:30%;
+}
+.adjust{
+    height: 100%;
+    width:100%;
+}
+.img-desc{
+    padding-left:20px;
+    padding-top:5px;
+}
+.to_wrap{
+    flex-wrap: wrap;
+}

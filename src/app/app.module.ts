@@ -11,10 +11,19 @@ import { SliderModule } from 'angular-image-slider';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
+import { Routes,RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { HomepageComponent } from './homepage/homepage.component';
+import { CartComponent } from './cart/cart.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    ProductsComponent,
+    HomepageComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,9 +33,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     SliderModule,
     IvyCarouselModule,
     BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
