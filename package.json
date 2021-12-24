@@ -29,6 +29,7 @@
     "ng-simple-slideshow": "^1.2.9",
     "ngx-lightbox": "^2.5.2",
     "ngx-slick-carousel": "^0.5.1",
+    "ngx-toastr": "^14.2.1",
     "rxjs": "~6.6.0",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",

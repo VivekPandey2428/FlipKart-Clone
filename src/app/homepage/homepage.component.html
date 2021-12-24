@@ -1,54 +1,5 @@
 <div class="ancestor">
-    <div class="parent">
-    <div class="bg1">
-        <div class="heading">
-          <h3 style="color: #fff;font-size: 22px;">Flipkart</h3>
-          <small style="color: #fff; ">Explore <strong style="color: yellow;">Plus</strong></small>
-        </div>
-        <div class="searchbox">
-          <input type="text" placeholder="Search for products, brands and more">
-          <img class="search-icon" [src]=icons.search alt="">
-        </div>
-        </div>
-        <div class="navelem">
-          <ul class="list-group">
-            <li class="list-group-item">
-             <div class="dropdown" (mouseenter)="isitClicked()">
-               <button class="dropbtn">
-                 Vivek⮟
-               </button>
-               <div *ngIf="clicked" (click)="negate()" (mouseleave)="isitClicked()" class="pfix">
-               <div class="dropdown-content" *ngFor="let data of dropdownContent">
-                 <a>{{data.content}}</a>
-               </div>
-              </div>
-             </div>
-            </li>
-            <li class="list-group-item">More</li>
-            <li class="list-group-item">Cart</li>
-            <li class="list-group-item"><button class="login-button"(click)="onclick()">Login/Signup</button></li>
-          </ul>
-        </div>
-      </div>
       <!-- Modal Starts here -->
-      <div class="login-modal" *ngIf="clicked3">
-        <div class="container">
-        <div class="desc44">
-          <h3>Login</h3>
-          <p>Get access to your Orders, Wishlist and Recommendations</p>
-        </div>
-        <div class="input-info">
-        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <input type="email" [formControl]="email" placeholder="Enter Email">
-        <input type="password" [formControl]="password" placeholder="Enter Password"><br>
-        <p class="agreement">By continuing, you agree to Flipkart's <a href=""> Terms of Use</a> and <a href="">Privacy Policy</a>.</p>
-        <button type="submit" class="login-button2" [disabled]="!profileForm.valid">Login</button>
-        <p class="or">OR</p>
-        <button class="OTP">Request OTP</button>
-      </form>
-        </div>
-        </div>
-        </div>
       <!-- Modal Ends Here --> 
       <div class="image-section">
         <div class="align-image"  style="margin-left: 150px;">

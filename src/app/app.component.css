@@ -165,6 +165,14 @@
 .align-image:hover{
     color:#2874f0;
 }
+.cross{
+    position:absolute;
+    right:-25px;
+    cursor:pointer;
+    top:-20px;
+    font-size:36px;
+    color:#000;
+}
 
 .dropdown-toggle::after {
     display: none;

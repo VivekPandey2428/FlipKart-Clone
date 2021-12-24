@@ -170,18 +170,7 @@ export class HomepageComponent implements OnInit {
   dropdown(){
     console.log("helo");
   }
-  dropdownContent=[
-    {content:"My Profile"},
-    {content:"SuperCoin Zone"},
-    {content:"Flipkart Plus Zone"},
-    {content:"Orders"},
-    {content:"Wishlist"},
-    {content:"My Chats"},
-    {content:"Coupons"},
-    {content:"Gift Cards"},
-    {content:"Notifications"},
-    {content:"Logout"}
-  ]
+ 
   isitClicked(){
     this.clicked=!this.clicked;
   }
@@ -224,18 +213,4 @@ export class HomepageComponent implements OnInit {
     }
   }
   /*------------------------------>Login Modal<---------------------------- */
-  clicked3:boolean=false;
-  onclick(){
-    this.clicked3=!this.clicked3;
-  }
-  email:any;
-  password:any;
-  profileForm = new FormGroup({
-  });
-  onSubmit(){
-    this.clicked3=false;
-  }
-  mobileproducts(){
-    this.route.navigate(['products']);
-  }
 }

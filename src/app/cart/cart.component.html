@@ -1,8 +1,7 @@
-<p>cart works!</p>
-<h3>Cart</h3>
-<div class="container">
+
+<div class="container pt-5">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8 c1">
             <div class="cart-item" *ngFor="let item of items">
                 <div class="img-wrap p-3"><img [src]=item.Img alt=""></div>
                 <div class="desc-wrap">
@@ -10,10 +9,9 @@
                 <p class="h5">rs. {{item.price}}</p>
               </div>
               </div>
+              <div class="buy-now">
+              <button class="btn btn-success p-2 alignbtn" (click)="fakeOrder()">Buy Now</button>
+            </div>
         </div>
-        <div class="col-md-6">
-            <p>Total-> {{price}}</p>
-            <button class="btn btn-success p-2" (click)="fakeOrder()">Buy Now</button>
         </div>
     </div>
-</div>
