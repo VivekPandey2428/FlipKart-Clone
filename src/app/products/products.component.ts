@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product';
 import { CartService } from '../cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-products',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductsComponent implements OnInit {
   searchText:string='';
-  constructor(private cartService:CartService,private toastr:ToastrService) { }
+  constructor(private cartService:CartService,private toastr:ToastrService, private viewPortScroller:ViewportScroller) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +34,9 @@ export class ProductsComponent implements OnInit {
     console.log(product);
     console.log(this.cartService.getItems());
     this.toastr.success("your product has been added to cart ");
-    this.toastr.success("Go to Cart to checkout");
+  }
+  Scroll(elementId:string){
+    this.viewPortScroller.scrollToAnchor(elementId);
   }
 
 

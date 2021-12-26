@@ -2,7 +2,6 @@
     padding-top:100px;
 }
 .c1{
-    border:1px solid black;
     height:auto;
 }
 .cart-item{
@@ -10,14 +9,14 @@
     width:100%;
     box-shadow: 0 0 10px 0 lightgrey;
     display: flex;
+    margin-top:20px;
 }
 .cart-item img{
     height:100px;
 }
 .buy-now{
-    height:40px;
+    height:200px;
     width:100%;
     background:#fff;
     box-shadow: 0 0 10px lightgrey;
-    text-align:end;
 }

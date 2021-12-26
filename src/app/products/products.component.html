@@ -4,14 +4,14 @@
         <div class="col-md-12">
         <div class="searchbar">
            <input type="text" class="search" placeholder="Search Products" [(ngModel)]="searchText">
-           <button class="searchbtn">Search</button> 
+           <button class="searchbtn" (click)="Scroll('last')">Search</button> 
         </div>
         </div>
         <div class="align-col-products mt-2 mr-2"*ngFor="let product of products|appFilter:searchText">
             <div class="img-40" >
                 <img class="adjust" [src]=product.Img alt="">
             </div>
-            <div class="img-desc ">
+            <div class="img-desc" id="last">
                 <p class="h1">{{product.Model}}</p>
                 <p class="h3">Buy Now</p>
                 <p class="h6">Limited Time deal offer</p>

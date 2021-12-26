@@ -9,9 +9,11 @@ import { CartService } from '../cart.service';
 export class CartComponent implements OnInit {
   items=this.cartService.getItems();
   price:number=0;
+  discountedprice:number=0;
   constructor(private cartService:CartService) {
     for(let i=0;i<this.items.length;i++){
       this.price+=parseInt(this.items[i].price);
+      this.discountedprice+=Math.floor(parseInt(this.items[i].price)*1.1);
     }
     console.log(this.price);
    }
