@@ -3,8 +3,11 @@ import { Caption } from './caption';
 import { Images } from './images';
 import { HostListener } from '@angular/core';
 import { ElementRef } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ThrowStmt } from '@angular/compiler';
+import { LoginService } from './login.service';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private route:Router){
+  constructor(private route:Router,private httpService:LoginService,private toastr:ToastrService){
 
   }
   clicked:boolean=false;
@@ -43,9 +46,28 @@ export class AppComponent {
   password:any;
   number:any;
   profileForm = new FormGroup({
+    'email': new FormControl('',Validators.required),
+    'password':new FormControl('',[Validators.required,Validators.minLength(6)]),
   });
-  onSubmit(){
-    this.clicked3=false;
+  SignupForm=new FormGroup({
+    'number':new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+  });
+  onSubmit(profileForm:any){
+    if(this.profileForm.valid){
+      let data={
+        'email':profileForm.value.email,
+        'password':profileForm.value.password
+      }
+       this.httpService.LoginUserData(data).subscribe((res)=>{
+         this.toastr.success('Login Successful');
+         localStorage.setItem('token',res.token);
+         this.clicked3=false;
+         this.route.navigate(['products']),
+         console.log('User1',res)
+       },(error)=>{
+         console.log('error',error)
+       })
+    }
   }
   mobileproducts(){
     this.route.navigate(['products']);
@@ -63,5 +85,8 @@ export class AppComponent {
   negateall(){
     this.clicked3=false;
     this.clicked4=false;
+  }
+  Submit(){
+
   }
 }

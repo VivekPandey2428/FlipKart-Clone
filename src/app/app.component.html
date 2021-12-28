@@ -37,13 +37,11 @@
           <p>Get access to your Orders, Wishlist and Recommendations</p>
         </div>
         <div class="input-info">
-        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <input type="email" [formControl]="email" placeholder="Enter Email">
-        <input type="password" [formControl]="password" placeholder="Enter Password"><br>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+        <input type="email" formControlName="email" placeholder="Enter Email">
+        <input type="password" formControlName="password" placeholder="Enter Password"><br>
         <p class="agreement">By continuing, you agree to Flipkart's <a href=""> Terms of Use</a> and <a href="">Privacy Policy</a>.</p>
         <button type="submit" class="login-button2" [disabled]="!profileForm.valid">Login</button>
-        <p class="or">OR</p>
-        <button class="OTP">Request OTP</button>
       </form>
       <p class="mt-5" (click)="signup()" style="cursor:pointer;color:#2874f0;text-align: center;">SignUp</p>
         </div>
@@ -57,7 +55,7 @@
               <p>Get access to your Orders, Wishlist and Recommendations</p>
             </div>
             <div class="input-info">
-            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="SignupForm" (ngSubmit)="Submit()">
             <input type="number" [formControl]="number" placeholder="Enter Number">
             <button type="submit" class="login-button2" [disabled]="!profileForm.valid">Request OTP</button>
           </form>

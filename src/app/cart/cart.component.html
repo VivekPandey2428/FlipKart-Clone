@@ -6,13 +6,13 @@
                 <div class="img-wrap p-3"><img [src]=item.Img alt=""></div>
                 <div class="desc-wrap">
                 <p class="h4" style="margin-top:20px;">{{item.Model}}</p>
-                <p class="text-muted">‎₹{{item.price}}</p>
+                <p class="text-muted">₹{{item.price}}</p>
               </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mt-3">
                 <div class="buy-now">
-                    <p><strong>Total Price:</strong> ₹{{discountedprice}}</p>
+                    <p style="padding-top:20px;"><strong>Total Price:</strong> ₹{{discountedprice}}</p>
                     <p><strong>Discounted Price:</strong> ₹{{price}}<small style="color:green; text-decoration: line-through;"> ₹{{discountedprice}}</small></p>
                     <p></p>
                     <button class="btn btn-success p-2 alignbtn" (click)="fakeOrder()">Buy Now</button>

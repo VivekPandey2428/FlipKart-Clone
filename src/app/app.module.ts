@@ -18,6 +18,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CartComponent } from './cart/cart.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipe } from './filter.pipe';
+import {  HttpClientModule } from '@angular/common/http';
+import { AuthserviceService } from './authservice.service';
 
 
 
@@ -41,10 +43,11 @@ import { FilterPipe } from './filter.pipe';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [AuthserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
