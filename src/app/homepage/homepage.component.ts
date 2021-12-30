@@ -5,6 +5,8 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Images } from '../images';
+import { SubjectService } from '../subject.service';
+import { Input } from '@angular/core';
 
 const left = [
   query(':enter, :leave', style({ position: 'fixed', width: '200px' }), { optional: true }),
@@ -163,7 +165,7 @@ export class HomepageComponent implements OnInit {
     }
  
 }
-  constructor(private el:ElementRef,private route:Router){
+  constructor(private el:ElementRef,private route:Router,private subject:SubjectService){
   }
   ngOnInit(){
   }

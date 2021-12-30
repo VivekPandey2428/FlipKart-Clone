@@ -11,13 +11,17 @@ export class CartComponent implements OnInit {
   price:number=0;
   discountedprice:number=0;
   constructor(private cartService:CartService) {
+    console.log('component');
+   }
+  ngOnInit(): void {
+    this.submit();
+  }
+  submit(){
     for(let i=0;i<this.items.length;i++){
       this.price+=parseInt(this.items[i].price);
       this.discountedprice+=Math.floor(parseInt(this.items[i].price)*1.1);
     }
     console.log(this.price);
-   }
-  ngOnInit(): void {
   }
   fakeOrder(){
     window.alert("Thanks for your fake purchase This Item will never reach you..:)")

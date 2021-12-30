@@ -3,7 +3,12 @@ import { Product } from '../product';
 import { CartService } from '../cart.service';
 import { ToastrService } from 'ngx-toastr';
 import { ViewportScroller } from '@angular/common';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable, observable, of, Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, Scroll } from '@angular/router';
+import { SubjectService } from '../subject.service';
+import { ThrowStmt } from '@angular/compiler';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,9 +16,19 @@ import { ViewportScroller } from '@angular/common';
 })
 export class ProductsComponent implements OnInit {
   searchText:string='';
-  constructor(private cartService:CartService,private toastr:ToastrService, private viewPortScroller:ViewportScroller) { }
-
-  ngOnInit(): void {
+  subscription:Subscription;
+  price:any;
+  loading:Observable<boolean>=of(false);
+  messageService: any;
+  constructor(private cartService:CartService,private toastr:ToastrService,private route:Router, private viewPortScroller:ViewportScroller,private httpClient:HttpClient, private subject:SubjectService) {
+   }
+   sendMessage():void{
+    this.subject.sendMessage('Hello this is Subject');
+  }
+  data={};
+  ngOnInit(){
+    this.httpClient.get('https://reqres.in/api/unknown').subscribe(data=> this.data=data);
+    ///this.getPrice();
   }
   products=[
     {Model:"APPLE iPhone 12 (Black, 64 GB)",Img:"https://rukminim1.flixcart.com/image/312/312/kg8avm80/mobile/r/h/z/apple-iphone-12-dummyapplefsn-original-imafwg8dqgncgbcb.jpeg?q=70",price:"52000"},
@@ -38,6 +53,4 @@ export class ProductsComponent implements OnInit {
   Scroll(elementId:string){
     this.viewPortScroller.scrollToAnchor(elementId);
   }
-
-
 }

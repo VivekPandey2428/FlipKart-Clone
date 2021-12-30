@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -12,14 +11,16 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
-import { Routes,RouterModule } from '@angular/router';
+import { Routes,RouterModule, Router } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HomepageComponent } from './homepage/homepage.component';
-import { CartComponent } from './cart/cart.component';
 import { ToastrModule } from 'ngx-toastr';
 import { FilterPipe } from './filter.pipe';
-import {  HttpClientModule } from '@angular/common/http';
+import {  HttpClientModule, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthserviceService } from './authservice.service';
+import { HeaderComponent } from './header/header.component';
+import { MyInterceptor } from './my-interceptor.service';
+
 
 
 
@@ -28,8 +29,8 @@ import { AuthserviceService } from './authservice.service';
     AppComponent,
     ProductsComponent,
     HomepageComponent,
-    CartComponent,
-    FilterPipe
+    FilterPipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,17 @@ import { AuthserviceService } from './authservice.service';
     HttpClientModule,
   ],
   exports:[RouterModule],
-  providers: [AuthserviceService],
+  providers: [
+    AuthserviceService,
+    {provide:HTTP_INTERCEPTORS, useClass:MyInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  to_implement_input:string="Input working";
+  constructor(private route:Router){
+  }
+  ngOnInit(){
+
+  }
+}

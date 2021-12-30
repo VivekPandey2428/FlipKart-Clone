@@ -10,7 +10,7 @@ import { ProductsComponent } from './products/products.component';
 const appRoutes:Routes=[
   {path:'home', component:HomepageComponent},
   {path:'products',component:ProductsComponent,canActivate:[AuthGuard]},
-  {path:'cart',component:CartComponent},
+  {path:'cart',loadChildren:()=>import('./cart/cart.module').then(m=>m.CartModule)},
   {path:'**',redirectTo:'home'}
 ]
 
@@ -18,9 +18,7 @@ const appRoutes:Routes=[
     declarations: [ 
       ],
 imports:[
-      RouterModule.forRoot(appRoutes,{
-        anchorScrolling:'enabled'
-      })
+      RouterModule.forRoot(appRoutes)
 ],
 
 exports:[RouterModule]

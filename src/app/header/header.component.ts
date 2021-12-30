@@ -1,22 +1,33 @@
-import { Component } from '@angular/core';
-import { Caption } from './caption';
-import { Images } from './images';
-import { HostListener } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router,Event, RouterEvent } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
-import { LoginService } from './login.service';
+import { LoginService } from '../login.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { HttpClient } from '@angular/common/http';
+import { Observable, observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent {
-  constructor(private route:Router,private httpService:LoginService,private toastr:ToastrService){
-
+export class HeaderComponent implements OnInit {
+  constructor(private route:Router,private httpService:LoginService,private toastr:ToastrService,private httpClient:HttpClient){
+  }
+  data={};
+  ngOnInit(){
+    this.httpClient.get('https://reqres.in/api/unknown').subscribe(data=> this.data=data);
+    this.isdatapresent();
+    this.Submit();
+  }
+  isdatapresent(){
+    console.log(this.data);
+  }
+  routetocart(){
+    this.route.navigate(['cart']);
   }
   clicked:boolean=false;
   dropdownContent=[
@@ -45,6 +56,11 @@ export class AppComponent {
   email:any;
   password:any;
   number:any;
+  @Input() InputWorking:string="";
+  @Output() newFruitEvent = new EventEmitter<string>();
+  passValue(value:string){
+    this.newFruitEvent.emit('value go Output '+value);
+  }
   profileForm = new FormGroup({
     'email': new FormControl('',Validators.required),
     'password':new FormControl('',[Validators.required,Validators.minLength(6)]),
@@ -86,10 +102,8 @@ export class AppComponent {
     this.clicked3=false;
     this.clicked4=false;
   }
-  input:string="Working....Input";
-  output:string[]=[];
-  Submit(value:string){
-    this.output.push(value);
-    console.log(this.output);
+  Submit(){
+    console.log(this.InputWorking);
   }
+
 }
